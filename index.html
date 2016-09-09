@@ -4,9 +4,8 @@
 </html>
 <script type="text/javascript">
     a = document.getElementsByTagName('body')[0];
-    c = function(){a.innerText = window.localStorage["scratchpad"];}
+    a.innerText = window.localStorage["scratchpad"];
     window.getSelection().collapse(a, 0);
-    b = window.setInterval(c,100);
-    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerText;})
-    c();
+    b = window.setInterval(function(){a.innerText = window.localStorage["scratchpad"];},100)
+    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerText;});
 </script>  
