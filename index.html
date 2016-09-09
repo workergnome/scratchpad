@@ -4,8 +4,11 @@
 </html>
 <script type="text/javascript">
     a = document.getElementsByTagName('body')[0];
-    a.innerText = window.localStorage["scratchpad"];
+    a.innerHTML = window.localStorage["scratchpad"];
     window.getSelection().collapse(a, 0);
-    b = window.setInterval(function(){a.innerText = window.localStorage["scratchpad"];},100)
-    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerText;});
+    b = window.setInterval(function(){
+      c = window.localStorage["scratchpad"];      
+      if(c != a.innerHTML) {a.innerHTML = c;}
+    },100)
+    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerHTML;});
 </script>  
