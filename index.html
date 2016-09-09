@@ -3,9 +3,10 @@
   style="border: 30px solid #666; background-color: #eee; font-family: Helvetica; padding: 10px; line-height: 1.4em; border-bottom-width: 10px; border-top-width: 20px; margin:0;">
 </html>
 <script type="text/javascript">
-    a = document.getElementsByTagName('body')[0];
-    a.innerText = window.localStorage["scratchpad"];
-    window.getSelection().collapse(a, 0);
-    b = window.setInterval(function(){a.innerText = window.localStorage["scratchpad"];},100);
-    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerText;});
+    a = document.getElementsByTagName('body')[0]
+    window.getSelection().collapse(a, 0)
+    b = function(){a.innerText = window.localStorage["scratchpad"]}
+    window.setInterval(b,100)
+    a.addEventListener("input", function(e) {window.localStorage["scratchpad"] = e.target.innerText})
+    b()
 </script>  
