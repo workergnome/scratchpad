@@ -4,7 +4,7 @@
 </html>
 <script type="text/javascript">
     a = document.getElementsByTagName('body')[0];
-    a.innerHTML = window.localStorage["scratchpad"] || "(type something)";
+    a.innerHTML = window.localStorage["scratchpad"] || window.localStorage["scratchpad"] = "(type something)";
     window.getSelection().collapse(a, 0);
     b = window.setInterval(function(){
       c = window.localStorage["scratchpad"];      
